@@ -1,0 +1,37 @@
+# Full Guide to Get Google & GitHub OAuth Credentials
+
+## Google OAuth (Client ID & Client Secret)
+
+1. Go to the [Google Cloud Console](https://console.cloud.google.com/).
+2. Create a new project or select an existing one from the top dropdown.
+3. In the left sidebar, navigate to **APIs & Services** > **Credentials**.
+4. If you haven't already, you may need to click **Configure Consent Screen**.
+   - Choose **External** (unless you have a Google Workspace and want it restricted).
+   - Fill in the required app information (App name, user support email, developer contact info) and click Save & Continue through the steps.
+5. Back on the **Credentials** page, click **+ CREATE CREDENTIALS** at the top and select **OAuth client ID**.
+6. Set **Application type** to **Web application**.
+7. Under **Authorized JavaScript origins**, add:
+   - `http://localhost:3000` (for local development)
+   - `https://your-production-domain.com` (for production)
+8. Under **Authorized redirect URIs**, add:
+   - `http://localhost:3000/api/auth/callback/google` (for local development)
+   - `https://your-production-domain.com/api/auth/callback/google` (for production)
+9. Click **Create**.
+10. A modal will appear with your **Client ID** and **Client Secret**. Add these to your `.env` file!
+
+---
+
+## GitHub OAuth (Client ID & Client Secret)
+
+1. Go to [GitHub Developer Settings](https://github.com/settings/developers).
+2. On the left sidebar, click on **OAuth Apps**.
+3. Click the **New OAuth App** button (or **Register a new application**).
+4. Fill in the application details:
+   - **Application name**: The name of your app (e.g., Fluxora).
+   - **Homepage URL**: `http://localhost:3000` (or your production URL).
+   - **Application description**: (Optional)
+   - **Authorization callback URL**: `http://localhost:3000/api/auth/callback/github` (For production: `https://your-production-domain.com/api/auth/callback/github`)
+5. Click **Register application**.
+6. You will see your **Client ID** displayed on the page. Copy this to your `.env` file.
+7. To get the Client Secret, click the **Generate a new client secret** button.
+8. Copy the generated **Client Secret** immediately and add it to your `.env` file (you won't be able to see it again!).

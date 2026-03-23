@@ -1,0 +1,548 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  directUrl    = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model Workflow {
+  id                  String             @id @default(cuid())
+  slug                String             @unique
+  name                String
+  description         String             @db.Text
+  icon                String?
+  thumbnail           String?
+  videoUrl            String?
+  difficulty          Difficulty         @default(BEGINNER)
+  featured            Boolean            @default(false)
+  indiaBadge          Boolean            @default(false)
+  nodeCount           Int                @default(0)
+  views               Int                @default(0)
+  downloads           Int                @default(0)
+  workflowJson        Json
+  useCases            Json
+  setupSteps          Json
+  credentialsRequired Json
+  nodes               Json
+  published           Boolean            @default(false)
+  isPaid              Boolean            @default(false)
+  price               Int                @default(0)
+  currency            String             @default("INR")
+  createdAt           DateTime           @default(now())
+  updatedAt           DateTime           @updatedAt
+  publishedAt         DateTime?
+  documentLink        String?
+  author              String?
+  authorUrl           String?
+  categories          WorkflowCategory[]
+  tags                WorkflowTag[]
+  bundles             BundleWorkflow[]
+  comments            Comment[]
+  votes               Vote[]
+  savedBy             SavedWorkflow[]
+  purchases           Purchase[]
+
+  @@index([slug])
+  @@index([featured])
+  @@index([difficulty])
+  @@index([published])
+  @@index([createdAt])
+  @@index([views])
+  @@index([published, createdAt])
+  @@index([published, views])
+  @@map("workflows")
+}
+
+model Category {
+  id          String             @id @default(cuid())
+  slug        String             @unique
+  name        String
+  icon        String
+  description String?
+  color       String             @default("#667eea")
+  order       Int                @default(0)
+  createdAt   DateTime           @default(now())
+  updatedAt   DateTime           @updatedAt
+  workflows   WorkflowCategory[]
+
+  @@index([slug])
+  @@index([order])
+  @@map("categories")
+}
+
+model Tag {
+  id        String        @id @default(cuid())
+  name      String        @unique
+  slug      String        @unique
+  createdAt DateTime      @default(now())
+  workflows WorkflowTag[]
+
+  @@index([slug])
+  @@map("tags")
+}
+
+model WorkflowCategory {
+  workflowId String
+  categoryId String
+  workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+  category   Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([workflowId, categoryId])
+  @@index([workflowId])
+  @@index([categoryId])
+  @@map("workflow_categories")
+}
+
+model WorkflowTag {
+  workflowId String
+  tagId      String
+  workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+  tag        Tag      @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([workflowId, tagId])
+  @@index([workflowId])
+  @@index([tagId])
+  @@map("workflow_tags")
+}
+
+model N8nNode {
+  id           String   @id @default(cuid())
+  name         String
+  type         String   @unique
+  category     String
+  description  String   @db.Text
+  icon         String?
+  parameters   Json
+  credentials  Json
+  isPremium    Boolean  @default(false)
+  isDeprecated Boolean  @default(false)
+  docUrl       String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([type])
+  @@index([category])
+  @@map("n8n_nodes")
+}
+
+model User {
+  id               String          @id @default(cuid())
+  email            String?         @unique
+  name             String?
+  password         String?
+  role             Role            @default(USER)
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  emailVerified    DateTime?
+  image            String?
+  bio              String?         @db.Text
+  communityRating  Float           @default(0)
+  githubUrl        String?
+  linkedinUrl      String?
+  location         String?
+  portfolioEnabled Boolean         @default(false)
+  portfolioTheme   String          @default("default")
+  totalDownloads   Int             @default(0)
+  totalViews       Int             @default(0)
+  totalWorkflows   Int             @default(0)
+  twitterHandle    String?
+  username         String?         @unique
+  websiteUrl       String?
+  accounts         Account[]
+  sessions         Session[]
+  comments         Comment[]
+  votes            Vote[]
+  savedWorkflows   SavedWorkflow[]
+  purchases        Purchase[]
+
+  @@index([portfolioEnabled])
+  @@index([username])
+  @@map("users")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@id([identifier, token])
+  @@map("verification_tokens")
+}
+
+model Comment {
+  id         String    @id @default(cuid())
+  content    String    @db.Text
+  userId     String
+  workflowId String
+  parentId   String?
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  user       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  workflow   Workflow  @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+  parent     Comment?  @relation("CommentReplies", fields: [parentId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  replies    Comment[] @relation("CommentReplies")
+
+  @@index([userId])
+  @@index([workflowId])
+  @@index([parentId])
+  @@map("comments")
+}
+
+model Vote {
+  id         String   @id @default(cuid())
+  type       VoteType
+  userId     String
+  workflowId String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, workflowId])
+  @@index([userId])
+  @@index([workflowId])
+  @@map("votes")
+}
+
+model SavedWorkflow {
+  id         String   @id @default(cuid())
+  userId     String
+  workflowId String
+  createdAt  DateTime @default(now())
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, workflowId])
+  @@index([userId])
+  @@index([workflowId])
+  @@map("saved_workflows")
+}
+
+model Waitlist {
+  id          String    @id @default(cuid())
+  email       String    @unique
+  accessCode  String    @unique
+  hasAccessed Boolean   @default(false)
+  accessedAt  DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([email])
+  @@index([accessCode])
+  @@map("waitlist")
+}
+
+model Bundle {
+  id             String           @id @default(cuid())
+  slug           String           @unique
+  name           String
+  description    String           @db.Text
+  objective      String           @db.Text
+  thumbnail      String?
+  aiImagePrompt  String?          @db.Text
+  icon           String?
+  color          String           @default("#667eea")
+  featured       Boolean          @default(false)
+  order          Int              @default(0)
+  views          Int              @default(0)
+  benefits       Json
+  targetAudience String?          @db.Text
+  estimatedTime  String?
+  published      Boolean          @default(false)
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  publishedAt    DateTime?
+  workflows      BundleWorkflow[]
+
+  @@index([slug])
+  @@index([featured])
+  @@index([published])
+  @@index([order])
+  @@index([published, createdAt])
+  @@index([published, views])
+  @@map("bundles")
+}
+
+model BundleWorkflow {
+  bundleId   String
+  workflowId String
+  order      Int      @default(0)
+  bundle     Bundle   @relation(fields: [bundleId], references: [id], onDelete: Cascade)
+  workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+
+  @@id([bundleId, workflowId])
+  @@index([bundleId])
+  @@index([workflowId])
+  @@map("bundle_workflows")
+}
+
+model SystemSetting {
+  key         String   @id
+  value       String
+  description String?
+  updatedAt   DateTime @updatedAt
+
+  @@map("system_settings")
+}
+
+model WorkflowSubmission {
+  id            String           @id @default(cuid())
+  workflowJson  Json
+  category      String
+  submitterName String?
+  contactEmail  String?
+  status        SubmissionStatus @default(PENDING)
+  createdAt     DateTime         @default(now())
+  authorUrl     String?
+
+  @@map("workflow_submissions")
+}
+
+model client_reviews {
+  id            String   @id
+  receiverId    String
+  giverId       String?
+  clientName    String
+  clientCompany String?
+  clientRole    String?
+  clientAvatar  String?
+  rating        Int
+  reviewText    String   @db.Text
+  projectType   String?
+  verified      Boolean  @default(false)
+  verifiedEmail String?
+  featured      Boolean  @default(false)
+  approved      Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime
+
+  @@index([approved])
+  @@index([featured])
+  @@index([giverId])
+  @@index([receiverId])
+}
+
+model portfolio_workflows {
+  id          String   @id
+  userId      String
+  workflowId  String
+  featured    Boolean  @default(false)
+  order       Int      @default(0)
+  customTitle String?
+  customDesc  String?  @db.Text
+  caseStudy   String?  @db.Text
+  createdAt   DateTime @default(now())
+
+  @@unique([userId, workflowId])
+  @@index([featured])
+  @@index([userId])
+  @@index([workflowId])
+}
+
+model user_badges {
+  id          String                @id
+  userId      String
+  badgeType   user_badges_badgeType
+  title       String
+  description String
+  icon        String
+  color       String
+  earnedAt    DateTime              @default(now())
+
+  @@index([badgeType])
+  @@index([userId])
+}
+
+// ============================================================================
+// TUTORIALS - Interactive step-by-step guides for workflows
+// ============================================================================
+
+model Tutorial {
+  id            String         @id @default(cuid())
+  workflowSlug  String         @unique
+  title         String
+  description   String         @db.Text
+  difficulty    Difficulty
+  estimatedTime String
+  isAIGenerated Boolean        @default(false)
+  isPublished   Boolean        @default(true)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  steps         TutorialStep[]
+
+  @@index([workflowSlug])
+  @@index([isPublished])
+  @@index([difficulty])
+  @@map("tutorials")
+}
+
+model TutorialStep {
+  id                String             @id @default(cuid())
+  tutorialId        String
+  order             Int
+  title             String
+  description       String             @db.Text
+  type              TutorialStepType
+  codeSnippet       String?            @db.Text
+  imageUrl          String?
+  videoUrl          String?
+  hints             Json?
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  tutorial          Tutorial           @relation(fields: [tutorialId], references: [id], onDelete: Cascade)
+  credentialLinks   CredentialLink[]
+  externalResources ExternalResource[]
+
+  @@unique([tutorialId, order])
+  @@index([tutorialId])
+  @@index([order])
+  @@map("tutorial_steps")
+}
+
+model CredentialLink {
+  id                  String       @id @default(cuid())
+  stepId              String
+  name                String
+  provider            String
+  setupUrl            String       @db.Text
+  documentationUrl    String?      @db.Text
+  requiredPermissions Json?
+  setupInstructions   String?      @db.Text
+  createdAt           DateTime     @default(now())
+  updatedAt           DateTime     @updatedAt
+  step                TutorialStep @relation(fields: [stepId], references: [id], onDelete: Cascade)
+
+  @@index([stepId])
+  @@index([provider])
+  @@map("credential_links")
+}
+
+model ExternalResource {
+  id        String       @id @default(cuid())
+  stepId    String
+  title     String
+  url       String       @db.Text
+  type      ResourceType
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+  step      TutorialStep @relation(fields: [stepId], references: [id], onDelete: Cascade)
+
+  @@index([stepId])
+  @@index([type])
+  @@map("external_resources")
+}
+
+enum TutorialStepType {
+  INFO
+  ACTION
+  VALIDATION
+  CHECKPOINT
+}
+
+enum ResourceType {
+  documentation
+  video
+  tutorial
+  community
+}
+
+enum VoteType {
+  UPVOTE
+  DOWNVOTE
+}
+
+enum Difficulty {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+}
+
+enum Role {
+  USER
+  ADMIN
+  SUPER_ADMIN
+}
+
+enum SubmissionStatus {
+  PENDING
+  REVIEWED
+  REJECTED
+}
+
+enum user_badges_badgeType {
+  VERIFIED_CREATOR
+  TOP_CONTRIBUTOR
+  EXPERT_LEVEL
+  RISING_STAR
+  COMMUNITY_FAVORITE
+  DOWNLOAD_CHAMPION
+  EARLY_ADOPTER
+}
+
+model Purchase {
+  id         String   @id @default(cuid())
+  userId     String
+  workflowId String
+  paymentId  String
+  orderId    String
+  amount     Int
+  status     String   @default("COMPLETED")
+  createdAt  DateTime @default(now())
+
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  workflow   Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, workflowId])
+  @@index([userId])
+  @@index([workflowId])
+  @@map("purchases")
+}
+
+model Coupon {
+  id                 String    @id @default(cuid())
+  code               String    @unique
+  discountPercentage Int
+  isActive           Boolean   @default(true)
+  maxUses            Int?
+  usedCount          Int       @default(0)
+  validUntil         DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  @@map("coupons")
+}
