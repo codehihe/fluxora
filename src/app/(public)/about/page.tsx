@@ -206,7 +206,7 @@ export default function AboutPage() {
                 <span>View on GitHub</span>
               </a>
               <a
-                href="mailto:hello@flowkit.in"
+                href="mailto:hello@fluxora.in"
                 className="flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-lg px-4 py-3 transition-colors"
               >
                 <Mail className="h-5 w-5" />

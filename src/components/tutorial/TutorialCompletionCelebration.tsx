@@ -30,7 +30,7 @@ export default function TutorialCompletionCelebration({
 
   useEffect(() => {
     if (isOpen) {
-      // Trigger epic confetti with FlowKit colors
+      // Trigger epic confetti with Fluxora colors
       const duration = 4000
       const animationEnd = Date.now() + duration
       const defaults = { startVelocity: 30, spread: 360, ticks: 80, zIndex: 9999 }
@@ -51,7 +51,7 @@ export default function TutorialCompletionCelebration({
           ...defaults,
           particleCount,
           origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
-          colors: ['#FF6633', '#FFB366', '#FFA500', '#FF8C00'] // FlowKit orange shades
+          colors: ['#FF6633', '#FFB366', '#FFA500', '#FF8C00'] // Fluxora orange shades
         })
         confetti({
           ...defaults,
@@ -70,11 +70,11 @@ export default function TutorialCompletionCelebration({
   const timeElapsed = getTimeElapsed(progress)
 
   const handleShare = () => {
-    const text = `I just completed "${tutorial.title}" on FlowKit! 🎉 Check out 150+ free n8n workflow templates at flowkit.in`
+    const text = `I just completed "${tutorial.title}" on Fluxora! 🎉 Check out 150+ free n8n workflow templates at fluxora.in`
     
     if (navigator.share) {
       navigator.share({
-        title: "FlowKit Tutorial Completed!",
+        title: "Fluxora Tutorial Completed!",
         text: text,
         url: window.location.href,
       }).catch(() => {
@@ -90,7 +90,7 @@ export default function TutorialCompletionCelebration({
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-2xl p-0 overflow-hidden border-2 border-primary/50 shadow-2xl shadow-primary/20">
-        {/* FlowKit theme gradient */}
+        {/* Fluxora theme gradient */}
         <div className="relative bg-gradient-to-br from-black via-primary/5 to-black p-10">
           {/* Animated glow effect with primary color */}
           <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 animate-pulse" />
@@ -114,7 +114,7 @@ export default function TutorialCompletionCelebration({
                   <div className="absolute inset-0 bg-primary/40 rounded-full blur-2xl animate-pulse" />
                   <div className="absolute inset-0 bg-primary/60 rounded-full blur-xl animate-ping" style={{ animationDuration: '2s' }} />
                   
-                  {/* Trophy container with FlowKit colors */}
+                  {/* Trophy container with Fluxora colors */}
                   <motion.div 
                     animate={{ 
                       rotateY: [0, 360],
@@ -131,7 +131,7 @@ export default function TutorialCompletionCelebration({
                 </div>
               </motion.div>
 
-              {/* Epic Title with FlowKit styling */}
+              {/* Epic Title with Fluxora styling */}
               <div className="space-y-3">
                 <motion.h2
                   initial={{ opacity: 0, y: 20 }}
@@ -165,7 +165,7 @@ export default function TutorialCompletionCelebration({
                 </motion.div>
               </div>
 
-              {/* Stats Grid matching FlowKit style */}
+              {/* Stats Grid matching Fluxora style */}
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -237,7 +237,7 @@ export default function TutorialCompletionCelebration({
                 </p>
               </motion.div>
 
-              {/* Action Buttons matching FlowKit style */}
+              {/* Action Buttons matching Fluxora style */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

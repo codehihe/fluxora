@@ -24,7 +24,7 @@ export default function AccessGate() {
     setMounted(true)
 
     // Check if user has valid access in localStorage (persists across tabs)
-    const hasAccess = localStorage.getItem("flowkit_access")
+    const hasAccess = localStorage.getItem("fluxora_access")
     if (hasAccess === "true") {
       window.location.reload()
     }
@@ -105,7 +105,7 @@ export default function AccessGate() {
       }
 
       toast.success("Access granted! Welcome to Fluxora.")
-      localStorage.setItem("flowkit_access", "true")
+      localStorage.setItem("fluxora_access", "true")
 
       setTimeout(() => {
         window.location.reload()

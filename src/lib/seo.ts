@@ -1,12 +1,12 @@
 /**
  * SEO Configuration and Utilities
- * Centralized SEO settings for FlowKit
+ * Centralized SEO settings for Fluxora
  */
 
 export const siteConfig = {
   name: "Fluxora",
-  domain: "flowkit.in",
-  url: "https://www.flowkit.in",
+  domain: "fluxora-pro.vercel.app",
+  url: "https://fluxora-pro.vercel.app",
   title: "Fluxora - 150+ Free n8n Workflow Templates | AI-Powered Automation Library",
   description: "Download 150+ production-ready n8n workflow templates for free. Open-source automation library with AI workflow builder, pre-built integrations, and ready-to-use templates. Build powerful automations in minutes with our curated n8n workflow marketplace.",
   keywords: [

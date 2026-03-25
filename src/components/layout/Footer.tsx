@@ -13,7 +13,7 @@ export default function Footer() {
     },
     // {
     //   icon: <Twitter className="w-6 h-6" />,
-    //   href: "https://twitter.com/flowkit",
+    //   href: "https://twitter.com/fluxora",
     //   label: "Twitter",
     // },
     {

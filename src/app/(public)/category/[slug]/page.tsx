@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 
   const categoryDescription = category.description || `Browse ${category.name} n8n workflow templates - production-ready automation workflows`
-  const pageUrl = `https://www.flowkit.in/category/${category.slug}`
+  const pageUrl = `https://www.fluxora.in/category/${category.slug}`
 
   // Generate dynamic OG image
   const ogImageParams = new URLSearchParams({
@@ -28,14 +28,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     description: categoryDescription.slice(0, 100),
     type: 'category',
   })
-  const ogImage = `https://www.flowkit.in/api/og?${ogImageParams.toString()}`
+  const ogImage = `https://www.fluxora.in/api/og?${ogImageParams.toString()}`
 
   return {
-    title: `${category.name} n8n Workflows | FlowKit`,
+    title: `${category.name} n8n Workflows | Fluxora`,
     description: categoryDescription,
     keywords: `${category.name} workflows, ${category.name} n8n templates, ${category.name} automation, n8n ${category.name.toLowerCase()}`,
     openGraph: {
-      title: `${category.name} n8n Workflows | FlowKit`,
+      title: `${category.name} n8n Workflows | Fluxora`,
       description: categoryDescription,
       url: pageUrl,
       type: 'website',
@@ -50,10 +50,10 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${category.name} n8n Workflows | FlowKit`,
+      title: `${category.name} n8n Workflows | Fluxora`,
       description: categoryDescription,
       images: [ogImage],
-      creator: '@flowkit_in',
+      creator: '@fluxora_in',
     },
     alternates: {
       canonical: pageUrl,

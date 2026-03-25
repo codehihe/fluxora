@@ -65,7 +65,7 @@ export async function POST(
     const groq = getGroqClient();
 
     const systemPrompt = `You are an expert UI/UX designer creating image prompts for n8n workflow bundle collections.
-Your images must follow FlowKit's brand identity:
+Your images must follow Fluxora's brand identity:
 - Main brand color: #FF6B35 (orange)
 - Supporting colors: Dark theme with white/gray text
 - Style: Modern, clean, tech-focused, professional
@@ -73,7 +73,7 @@ Your images must follow FlowKit's brand identity:
 
 Generate a detailed JSON prompt for creating a bundle thumbnail that:
 1. Represents a COLLECTION of workflows (not a single workflow)
-2. Uses FlowKit's orange theme (#FF6B35) with gradient effects
+2. Uses Fluxora's orange theme (#FF6B35) with gradient effects
 3. Includes iconography suggesting completeness and bundled value
 4. Has a premium, professional look (bundles are more valuable than single workflows)
 5. Is suitable for display in a dark-themed interface
@@ -107,7 +107,7 @@ ${bundleDescription ? `Description: ${bundleDescription}` : ''}
 ${bundleObjective ? `Objective: ${bundleObjective}` : ''}
 Number of Workflows: ${workflowCount || 'Multiple'}
 
-Generate a JSON prompt that captures the premium, complete-solution nature of this bundle while using FlowKit's orange brand color (#FF6B35) with gradient effects for a premium look.`;
+Generate a JSON prompt that captures the premium, complete-solution nature of this bundle while using Fluxora's orange brand color (#FF6B35) with gradient effects for a premium look.`;
 
     const chatCompletion = await groq.chat.completions.create({
       messages: [

@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { siteConfig } from "@/lib/seo";
 
 /**
- * Dynamic sitemap generation for FlowKit
+ * Dynamic sitemap generation for Fluxora
  * Automatically includes all workflows and categories
  */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

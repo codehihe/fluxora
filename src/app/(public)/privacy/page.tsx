@@ -2,11 +2,11 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | FlowKit - Your Data, Your Control",
-  description: "FlowKit's privacy policy. Learn how we protect your data, what information we collect, and your rights. Transparent, secure, and user-focused privacy practices.",
+  title: "Privacy Policy | Fluxora - Your Data, Your Control",
+  description: "Fluxora's privacy policy. Learn how we protect your data, what information we collect, and your rights. Transparent, secure, and user-focused privacy practices.",
   openGraph: {
-    title: "Privacy Policy | FlowKit",
-    description: "Transparent privacy practices for FlowKit users. Your data, your control.",
+    title: "Privacy Policy | Fluxora",
+    description: "Transparent privacy practices for Fluxora users. Your data, your control.",
   },
 };
 
@@ -36,12 +36,12 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">1. Introduction</h2>
             <p className="mb-4">
-              Welcome to FlowKit. We respect your privacy and are committed to protecting your personal data.
+              Welcome to Fluxora. We respect your privacy and are committed to protecting your personal data.
               This privacy policy explains how we collect, use, and safeguard your information when you use our
               n8n workflow automation platform.
             </p>
             <p>
-              FlowKit is an open-source project (MIT License) that provides production-ready n8n workflows.
+              Fluxora is an open-source project (MIT License) that provides production-ready n8n workflows.
               We believe in transparency and your right to control your data.
             </p>
           </section>
@@ -70,7 +70,7 @@ export default function PrivacyPage() {
             <h2 className="text-2xl font-bold text-white mb-4">3. How We Use Your Information</h2>
             <p className="mb-4">We use your information to:</p>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>Provide access to FlowKit workflows and features</li>
+              <li>Provide access to Fluxora workflows and features</li>
               <li>Send you workflow updates and announcements (only if you opted in)</li>
               <li>Improve our platform based on usage patterns</li>
               <li>Respond to your inquiries and support requests</li>
@@ -125,8 +125,8 @@ export default function PrivacyPage() {
             </ul>
             <p className="mt-4">
               To exercise these rights, contact us at{" "}
-              <a href="mailto:privacy@flowkit.in" className="text-primary hover:underline">
-                privacy@flowkit.in
+              <a href="mailto:privacy@fluxora.in" className="text-primary hover:underline">
+                privacy@fluxora.in
               </a>
             </p>
           </section>
@@ -135,7 +135,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">7. Cookies and Tracking</h2>
             <p className="mb-4">
-              We use essential cookies to make FlowKit work properly. We also use analytics cookies to understand
+              We use essential cookies to make Fluxora work properly. We also use analytics cookies to understand
               how users interact with our platform.
             </p>
             <p>
@@ -147,7 +147,7 @@ export default function PrivacyPage() {
           {/* Third-Party Services */}
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">8. Third-Party Services</h2>
-            <p className="mb-4">FlowKit may integrate with third-party services:</p>
+            <p className="mb-4">Fluxora may integrate with third-party services:</p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li><strong>GitHub:</strong> For workflow storage and version control</li>
               <li><strong>Analytics Providers:</strong> To understand usage patterns</li>
@@ -162,7 +162,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">9. Children&apos;s Privacy</h2>
             <p>
-              FlowKit is not intended for users under 13 years of age. We do not knowingly collect data from
+              Fluxora is not intended for users under 13 years of age. We do not knowingly collect data from
               children. If you believe we have collected data from a child, please contact us immediately.
             </p>
           </section>
@@ -196,9 +196,9 @@ export default function PrivacyPage() {
               If you have questions about this privacy policy or our data practices, please contact us:
             </p>
             <div className="bg-white/5 border border-white/10 rounded-lg p-6 space-y-2">
-              <p><strong>Email:</strong> <a href="mailto:privacy@flowkit.in" className="text-primary hover:underline">privacy@flowkit.in</a></p>
-              <p><strong>GitHub:</strong> <a href="https://github.com/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">github.com/harshit-exe/flowkit</a></p>
-              <p><strong>Website:</strong> <a href="https://flowkit.in" className="text-primary hover:underline">flowkit.in</a></p>
+              <p><strong>Email:</strong> <a href="mailto:privacy@fluxora.in" className="text-primary hover:underline">privacy@fluxora.in</a></p>
+              <p><strong>GitHub:</strong> <a href="https://github.com/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">github.com/harshit-exe/fluxora</a></p>
+              <p><strong>Website:</strong> <a href="https://fluxora.in" className="text-primary hover:underline">fluxora.in</a></p>
             </div>
           </section>
 
@@ -206,7 +206,7 @@ export default function PrivacyPage() {
           <section className="border-t border-white/10 pt-8">
             <h2 className="text-2xl font-bold text-white mb-4"> TRUSTED Commitment</h2>
             <p>
-              FlowKit is an open-source project (MIT License). Our code is transparent and available for review
+              Fluxora is an open-source project (MIT License). Our code is transparent and available for review
               on GitHub. We believe in building trust through transparency.
             </p>
           </section>

@@ -587,7 +587,7 @@ export default function WorkflowForm({ initialData, categories, tags }: Workflow
           <CloudinaryImageUpload
             value={watch("thumbnail")}
             onChange={handleThumbnailUpload}
-            folder="flowkit-workflows"
+            folder="fluxora-workflows"
             label="Workflow Thumbnail"
             description="Upload a workflow thumbnail image (1200x630px recommended, max 10MB)"
           />

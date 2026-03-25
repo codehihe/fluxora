@@ -17,7 +17,7 @@ export default function EngagementModal() {
     if (session) return;
 
     // Check localStorage
-    const seen = localStorage.getItem("flowkit_engagement_modal_seen");
+    const seen = localStorage.getItem("fluxora_engagement_modal_seen");
     if (seen) {
       setHasSeenModal(true);
       return;
@@ -27,7 +27,7 @@ export default function EngagementModal() {
       if (window.scrollY > 800 && !hasSeenModal && !isOpen) {
         setIsOpen(true);
         setHasSeenModal(true);
-        localStorage.setItem("flowkit_engagement_modal_seen", "true");
+        localStorage.setItem("fluxora_engagement_modal_seen", "true");
       }
     };
 

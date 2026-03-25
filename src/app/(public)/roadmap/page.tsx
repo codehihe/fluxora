@@ -30,7 +30,7 @@ const MILESTONES = [
   {
     date: "THE SINGULARITY",
     title: "Neural Integration",
-    description: "The moment FlowKit became sentient. We integrated the Gemini AI engine, allowing users to manifest complex automation workflows simply by describing their intent.",
+    description: "The moment Fluxora became sentient. We integrated the Gemini AI engine, allowing users to manifest complex automation workflows simply by describing their intent.",
     icon: Sparkles,
     color: "text-purple-400",
     bg: "bg-purple-500/10",

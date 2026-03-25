@@ -17,7 +17,7 @@ export default function AccessGateWrapper() {
     }
 
     // Check if user has already authenticated (using localStorage for cross-tab persistence)
-    const hasAccess = localStorage.getItem("flowkit_access")
+    const hasAccess = localStorage.getItem("fluxora_access")
 
     if (hasAccess === "true") {
       setShouldShow(false)

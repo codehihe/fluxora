@@ -37,36 +37,62 @@ const categoryIcons: Record<string, any> = {
 };
 
 export default async function HomePage() {
-  // Fetch data for homepage
-  const [featuredWorkflows, categories, totalWorkflows, totalUsers, totalSubmissions, acceptedSubmissions] = await Promise.all([
-    prisma.workflow.findMany({
-      where: {
-        featured: true,
-        published: true,
-      },
-      include: {
-        categories: {
-          include: { category: true },
+  // Fetch data for homepage with error handling
+  let featuredWorkflows: any[] = [];
+  let categories: any[] = [];
+  let totalWorkflows = 0;
+  let totalUsers = 0;
+  let totalSubmissions = 0;
+  let acceptedSubmissions = 0;
+
+  try {
+    const [
+      featuredWorkflowsData,
+      categoriesData,
+      totalWorkflowsCount,
+      totalUsersCount,
+      totalSubmissionsCount,
+      acceptedSubmissionsCount
+    ] = await Promise.all([
+      prisma.workflow.findMany({
+        where: {
+          featured: true,
+          published: true,
         },
-      },
-      take: 6,
-      orderBy: { views: "desc" },
-    }),
-    prisma.category.findMany({
-      include: {
-        _count: {
-          select: { workflows: true },
+        include: {
+          categories: {
+            include: { category: true },
+          },
         },
-      },
-      orderBy: { order: "asc" },
-    }),
-    prisma.workflow.count({
-      where: { published: true },
-    }),
-    prisma.waitlist.count(),
-    prisma.workflowSubmission.count(),
-    prisma.workflowSubmission.count({ where: { status: "REVIEWED" } }),
-  ]);
+        take: 6,
+        orderBy: { views: "desc" },
+      }),
+      prisma.category.findMany({
+        include: {
+          _count: {
+            select: { workflows: true },
+          },
+        },
+        orderBy: { order: "asc" },
+      }),
+      prisma.workflow.count({
+        where: { published: true },
+      }),
+      prisma.waitlist.count(),
+      prisma.workflowSubmission.count(),
+      prisma.workflowSubmission.count({ where: { status: "REVIEWED" } }),
+    ]);
+
+    featuredWorkflows = featuredWorkflowsData;
+    categories = categoriesData;
+    totalWorkflows = totalWorkflowsCount;
+    totalUsers = totalUsersCount;
+    totalSubmissions = totalSubmissionsCount;
+    acceptedSubmissions = acceptedSubmissionsCount;
+  } catch (error) {
+    console.error("Failed to fetch homepage data:", error);
+    // Continue with default values to allow page to render even if DB fails
+  }
 
   const featuredWorkflowsWithOffsets = await applyStatsOffsetsToWorkflows(featuredWorkflows);
 
@@ -179,7 +205,7 @@ export default async function HomePage() {
                         <Badge variant="secondary" className="font-mono text-xs">
                           {workflow.difficulty}
                         </Badge>
-                        {workflow.categories.slice(0, 1).map((cat) => (
+                        {workflow.categories.slice(0, 1).map((cat: any) => (
                           <Badge
                             key={cat.category.id}
                             variant="outline"

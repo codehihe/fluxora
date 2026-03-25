@@ -58,7 +58,7 @@ export async function sendEmail(params: {
         // Resend implementation using the raw client
         const { resend } = await import("./resend");
         return resend.emails.send({
-            from: 'FlowKit <noreply@flowkit.in>',
+            from: 'Fluxora <noreply@fluxora.in>',
             to: params.to,
             subject: params.subject,
             text: params.text,

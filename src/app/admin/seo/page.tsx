@@ -136,7 +136,7 @@ export default function AdminSEOPage() {
               )}
             </Button>
             <Button
-              onClick={() => window.open("https://www.flowkit.in/sitemap.xml", "_blank")}
+              onClick={() => window.open("https://www.fluxora.in/sitemap.xml", "_blank")}
               variant="outline"
               className="font-mono border-2"
             >
@@ -151,12 +151,12 @@ export default function AdminSEOPage() {
             </p>
             <div className="flex items-center gap-2">
               <code className="flex-1 p-2 bg-background border-2 border-border text-xs">
-                https://www.flowkit.in/sitemap.xml
+                https://www.fluxora.in/sitemap.xml
               </code>
               <Button
                 size="sm"
                 variant="ghost"
-                onClick={() => copyUrl("https://www.flowkit.in/sitemap.xml")}
+                onClick={() => copyUrl("https://www.fluxora.in/sitemap.xml")}
               >
                 <Copy className="h-4 w-4" />
               </Button>
@@ -184,7 +184,7 @@ export default function AdminSEOPage() {
 
           <div className="flex gap-2">
             <Button
-              onClick={() => window.open("https://www.flowkit.in/robots.txt", "_blank")}
+              onClick={() => window.open("https://www.fluxora.in/robots.txt", "_blank")}
               variant="outline"
               className="font-mono border-2"
             >
@@ -199,12 +199,12 @@ export default function AdminSEOPage() {
             </p>
             <div className="flex items-center gap-2">
               <code className="flex-1 p-2 bg-background border-2 border-border text-xs">
-                https://www.flowkit.in/robots.txt
+                https://www.fluxora.in/robots.txt
               </code>
               <Button
                 size="sm"
                 variant="ghost"
-                onClick={() => copyUrl("https://www.flowkit.in/robots.txt")}
+                onClick={() => copyUrl("https://www.fluxora.in/robots.txt")}
               >
                 <Copy className="h-4 w-4" />
               </Button>

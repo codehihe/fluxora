@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url)
 
     // Get parameters from URL
-    const title = searchParams.get('title') || 'FlowKit - Free n8n Workflow Templates'
+    const title = searchParams.get('title') || 'Fluxora - Free n8n Workflow Templates'
     const description = searchParams.get('description') || 'Download 150+ production-ready n8n workflow templates for free'
     const type = searchParams.get('type') || 'default' // default, workflow, category, bundle
 
@@ -146,7 +146,7 @@ export async function GET(request: NextRequest) {
                   letterSpacing: '0.1em',
                 }}
               >
-                FlowKit.in
+                Fluxora.in
               </div>
               {type !== 'default' && (
                 <div

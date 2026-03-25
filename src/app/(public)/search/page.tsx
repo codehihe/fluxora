@@ -4,7 +4,7 @@ import { BundleGrid } from "@/components/bundle/BundleGrid"
 import { Metadata } from "next"
 
 const searchDescription = "Search free n8n workflow templates, bundles, and automation workflows. Find n8n templates for Slack, Email, AI automation, data sync, and more.  TRUSTED n8n workflow library."
-const pageUrl = "https://www.flowkit.in/search"
+const pageUrl = "https://www.fluxora.in/search"
 
 // Generate dynamic OG image
 const ogImageParams = new URLSearchParams({
@@ -12,14 +12,14 @@ const ogImageParams = new URLSearchParams({
   description: searchDescription.slice(0, 100),
   type: 'default',
 })
-const ogImage = `https://www.flowkit.in/api/og?${ogImageParams.toString()}`
+const ogImage = `https://www.fluxora.in/api/og?${ogImageParams.toString()}`
 
 export const metadata: Metadata = {
-  title: "Search n8n Workflows & Bundles | FlowKit",
+  title: "Search n8n Workflows & Bundles | Fluxora",
   description: searchDescription,
   keywords: "search n8n workflows, find n8n templates, n8n workflow search, n8n template search, search automation workflows, search bundles",
   openGraph: {
-    title: "Search n8n Workflows & Bundles | FlowKit",
+    title: "Search n8n Workflows & Bundles | Fluxora",
     description: searchDescription,
     url: pageUrl,
     type: 'website',
@@ -28,16 +28,16 @@ export const metadata: Metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: 'Search FlowKit',
+        alt: 'Search Fluxora',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Search n8n Workflows & Bundles | FlowKit",
+    title: "Search n8n Workflows & Bundles | Fluxora",
     description: searchDescription,
     images: [ogImage],
-    creator: '@flowkit_in',
+    creator: '@fluxora_in',
   },
   alternates: {
     canonical: pageUrl,

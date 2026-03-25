@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: BundlePageProps): Promise<Met
   }
 
   const bundleDescription = bundle.objective || bundle.description
-  const pageUrl = `https://www.flowkit.in/bundles/${bundle.slug}`
+  const pageUrl = `https://www.fluxora.in/bundles/${bundle.slug}`
 
   // Generate dynamic OG image
   const ogImageParams = new URLSearchParams({
@@ -33,14 +33,14 @@ export async function generateMetadata({ params }: BundlePageProps): Promise<Met
     description: bundleDescription.slice(0, 100),
     type: 'bundle',
   })
-  const ogImage = `https://www.flowkit.in/api/og?${ogImageParams.toString()}`
+  const ogImage = `https://www.fluxora.in/api/og?${ogImageParams.toString()}`
 
   return {
-    title: `${bundle.name} - n8n Workflow Bundle | FlowKit`,
+    title: `${bundle.name} - n8n Workflow Bundle | Fluxora`,
     description: bundleDescription,
     keywords: `${bundle.name} bundle, n8n workflow collection, ${bundle.name} automation, workflow bundle`,
     openGraph: {
-      title: `${bundle.name} - Workflow Bundle | FlowKit`,
+      title: `${bundle.name} - Workflow Bundle | Fluxora`,
       description: bundleDescription,
       url: pageUrl,
       type: "website",
@@ -55,10 +55,10 @@ export async function generateMetadata({ params }: BundlePageProps): Promise<Met
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${bundle.name} - Workflow Bundle | FlowKit`,
+      title: `${bundle.name} - Workflow Bundle | Fluxora`,
       description: bundleDescription,
       images: [ogImage],
-      creator: '@flowkit_in',
+      creator: '@fluxora_in',
     },
     alternates: {
       canonical: pageUrl,
@@ -368,7 +368,7 @@ export default async function BundlePage({ params }: BundlePageProps) {
             name: bundle.name,
             description: bundle.objective,
             image: bundle.thumbnail,
-            url: `https://flowkit.com/bundles/${bundle.slug}`,
+            url: `https://fluxora.com/bundles/${bundle.slug}`,
             mainEntity: {
               "@type": "ItemList",
               numberOfItems: bundle.workflows.length,

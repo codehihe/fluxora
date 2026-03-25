@@ -5,11 +5,11 @@ import { BundleGrid } from "@/components/bundle/BundleGrid"
 import { Sparkles, Package } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Workflow Bundles - Complete Automation Solutions | FlowKit",
+  title: "Workflow Bundles - Complete Automation Solutions | Fluxora",
   description:
     "Discover curated workflow bundles - complete automation solutions combining multiple workflows to solve complex business challenges in minutes.",
   openGraph: {
-    title: "Workflow Bundles - Complete Automation Solutions | FlowKit",
+    title: "Workflow Bundles - Complete Automation Solutions | Fluxora",
     description:
       "Discover curated workflow bundles - complete automation solutions combining multiple workflows to solve complex business challenges in minutes.",
     type: "website",

@@ -63,13 +63,13 @@ ${message}
 
 ---
 
-This email was sent from FlowKit to all ${sendTo} users.
+This email was sent from Fluxora to all ${sendTo} users.
 
-FlowKit - Workflow Automation Platform
+Fluxora - Workflow Automation Platform
 Built with precision. Powered by automation.
-https://flowkit.in
+https://fluxora.in
 
-Unsubscribe: https://flowkit.in/unsubscribe?email=${encodeURIComponent(recipient.email)}
+Unsubscribe: https://fluxora.in/unsubscribe?email=${encodeURIComponent(recipient.email)}
           `,
           html: `
             <!DOCTYPE html>
@@ -90,11 +90,11 @@ Unsubscribe: https://flowkit.in/unsubscribe?email=${encodeURIComponent(recipient
                 </div>
 
                 <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #333; text-align: center; font-size: 11px; color: #666;">
-                  This email was sent from FlowKit to ${sendTo} users.<br><br>
-                  FlowKit - Workflow Automation Platform<br>
+                  This email was sent from Fluxora to ${sendTo} users.<br><br>
+                  Fluxora - Workflow Automation Platform<br>
                   Built with precision. Powered by automation.<br>
-                  <a href="https://flowkit.in" style="color: #FF6633; text-decoration: none;">flowkit.in</a><br><br>
-                  <a href="https://flowkit.in/unsubscribe?email=${encodeURIComponent(recipient.email)}" style="color: #888; text-decoration: underline;">Unsubscribe</a>
+                  <a href="https://fluxora.in" style="color: #FF6633; text-decoration: none;">fluxora.in</a><br><br>
+                  <a href="https://fluxora.in/unsubscribe?email=${encodeURIComponent(recipient.email)}" style="color: #888; text-decoration: underline;">Unsubscribe</a>
                 </div>
               </div>
             </body>

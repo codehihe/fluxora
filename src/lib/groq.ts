@@ -52,7 +52,7 @@ export async function generateThumbnailPrompt(
       .slice(0, 5); // Get first 5 nodes
 
     const systemPrompt = `You are an expert UI/UX designer creating thumbnail prompts for n8n workflow templates.
-Your thumbnails must follow FlowKit's brand identity:
+Your thumbnails must follow Fluxora's brand identity:
 - Main brand color: #FF6B35 (orange)
 - Supporting colors: Dark theme with white/gray text
 - Style: Modern, clean, tech-focused, professional
@@ -60,7 +60,7 @@ Your thumbnails must follow FlowKit's brand identity:
 
 Generate a detailed JSON prompt for creating a workflow thumbnail that:
 1. Reflects the workflow's purpose and key nodes
-2. Uses FlowKit's orange theme (#FF6B35) prominently
+2. Uses Fluxora's orange theme (#FF6B35) prominently
 3. Includes relevant iconography for the workflow type
 4. Has a modern, professional look
 5. Is suitable for display in a dark-themed interface
@@ -92,7 +92,7 @@ Workflow Name: ${workflowName}
 Key Nodes: ${nodeTypes.join(', ')}
 Total Nodes: ${nodes.length}
 
-Generate a JSON prompt that captures the essence of this workflow while using FlowKit's orange brand color (#FF6B35) as the primary theme.`;
+Generate a JSON prompt that captures the essence of this workflow while using Fluxora's orange brand color (#FF6B35) as the primary theme.`;
 
     const chatCompletion = await groq.chat.completions.create({
       messages: [

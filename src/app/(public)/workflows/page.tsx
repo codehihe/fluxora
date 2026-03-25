@@ -7,7 +7,7 @@ import { Metadata } from "next"
 import { Pagination } from "@/components/ui/pagination"
 
 const workflowsDescription = "Browse 150+ free n8n workflow templates. Download production-ready n8n automation workflows.  TRUSTED n8n template library with integrations for Slack, Email, AI, and more."
-const pageUrl = "https://www.flowkit.in/workflows"
+const pageUrl = "https://www.fluxora.in/workflows"
 
 // Generate dynamic OG image
 const ogImageParams = new URLSearchParams({
@@ -15,14 +15,14 @@ const ogImageParams = new URLSearchParams({
   description: workflowsDescription.slice(0, 100),
   type: 'default',
 })
-const ogImage = `https://www.flowkit.in/api/og?${ogImageParams.toString()}`
+const ogImage = `https://www.fluxora.in/api/og?${ogImageParams.toString()}`
 
 export const metadata: Metadata = {
-  title: "Free n8n Workflow Templates & Automation Library | FlowKit",
+  title: "Free n8n Workflow Templates & Automation Library | Fluxora",
   description: workflowsDescription,
   keywords: "n8n workflows, n8n templates, free n8n workflows, n8n workflow library, n8n automation templates,  TRUSTED workflows",
   openGraph: {
-    title: "Free n8n Workflow Templates & Automation Library | FlowKit",
+    title: "Free n8n Workflow Templates & Automation Library | Fluxora",
     description: workflowsDescription,
     url: pageUrl,
     type: 'website',
@@ -31,16 +31,16 @@ export const metadata: Metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: 'FlowKit Workflow Templates',
+        alt: 'Fluxora Workflow Templates',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Free n8n Workflow Templates & Automation Library | FlowKit",
+    title: "Free n8n Workflow Templates & Automation Library | Fluxora",
     description: workflowsDescription,
     images: [ogImage],
-    creator: '@flowkit_in',
+    creator: '@fluxora_in',
   },
   alternates: {
     canonical: pageUrl,

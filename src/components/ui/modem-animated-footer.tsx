@@ -29,7 +29,7 @@ interface FooterProps {
 }
 
 export const Footer = ({
-  brandName = "FlowKit",
+  brandName = "Fluxora",
   brandDescription = "Production-ready automation workflows for modern teams",
   socialLinks = [],
   navLinks = [],

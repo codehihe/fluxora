@@ -8,7 +8,7 @@ async function changePassword() {
   
   if (args.length < 2) {
     console.log('Usage: npx tsx change-admin-password.ts <email> <new-password>');
-    console.log('Example: npx tsx change-admin-password.ts admin@flowkit.in "MyNewPassword!"');
+    console.log('Example: npx tsx change-admin-password.ts admin@fluxora.in "MyNewPassword!"');
     process.exit(1);
   }
 

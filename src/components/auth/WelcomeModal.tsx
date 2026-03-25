@@ -17,7 +17,7 @@ export default function WelcomeModal() {
 
   useEffect(() => {
     // Only show if user is NOT authenticated and hasn't seen it yet
-    const hasSeen = localStorage.getItem("flowkit_welcome_seen");
+    const hasSeen = localStorage.getItem("fluxora_welcome_seen");
     
     // Small delay to not overwhelm immediately on load
     const timer = setTimeout(() => {
@@ -31,7 +31,7 @@ export default function WelcomeModal() {
 
   const handleClose = () => {
     setIsOpen(false);
-    localStorage.setItem("flowkit_welcome_seen", "true");
+    localStorage.setItem("fluxora_welcome_seen", "true");
   };
 
   const handleOpenGift = () => {
@@ -45,7 +45,7 @@ export default function WelcomeModal() {
   };
 
   const handleLogin = (provider: "google" | "github") => {
-    localStorage.setItem("flowkit_welcome_seen", "true");
+    localStorage.setItem("fluxora_welcome_seen", "true");
     signIn(provider);
   };
 

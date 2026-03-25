@@ -2,11 +2,11 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | FlowKit - Usage Guidelines",
-  description: "FlowKit's terms of service. Understand your rights and responsibilities when using our n8n workflow automation platform. Fair, transparent, and user-friendly terms.",
+  title: "Terms of Service | Fluxora - Usage Guidelines",
+  description: "Fluxora's terms of service. Understand your rights and responsibilities when using our n8n workflow automation platform. Fair, transparent, and user-friendly terms.",
   openGraph: {
-    title: "Terms of Service | FlowKit",
-    description: "Clear and fair terms for using FlowKit's workflow automation platform.",
+    title: "Terms of Service | Fluxora",
+    description: "Clear and fair terms for using Fluxora's workflow automation platform.",
   },
 };
 
@@ -36,13 +36,13 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">1. Agreement to Terms</h2>
             <p className="mb-4">
-              Welcome to FlowKit! By accessing or using our platform at{" "}
-              <a href="https://flowkit.in" className="text-primary hover:underline">flowkit.in</a>,
+              Welcome to Fluxora! By accessing or using our platform at{" "}
+              <a href="https://fluxora.in" className="text-primary hover:underline">fluxora.in</a>,
               you agree to be bound by these Terms of Service (&quot;Terms&quot;). If you disagree with any part of these terms,
               please do not use our service.
             </p>
             <p>
-              FlowKit provides curated, production-ready n8n workflows to help you automate tasks efficiently.
+              Fluxora provides curated, production-ready n8n workflows to help you automate tasks efficiently.
               These Terms govern your use of our platform and workflows.
             </p>
           </section>
@@ -53,17 +53,17 @@ export default function TermsPage() {
 
             <h3 className="text-xl font-semibold text-white mb-3 mt-6">2.1  TRUSTED License</h3>
             <p className="mb-4">
-              FlowKit is released under the <strong className="text-primary">MIT License</strong>. This means:
+              Fluxora is released under the <strong className="text-primary">MIT License</strong>. This means:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>You can use FlowKit workflows for personal and commercial projects</li>
+              <li>You can use Fluxora workflows for personal and commercial projects</li>
               <li>You can modify and distribute the workflows</li>
               <li>You can create derivative works</li>
               <li>Attribution is appreciated but not required</li>
             </ul>
 
             <h3 className="text-xl font-semibold text-white mb-3 mt-6">2.2 Platform Usage</h3>
-            <p className="mb-4">You agree to use FlowKit responsibly and not to:</p>
+            <p className="mb-4">You agree to use Fluxora responsibly and not to:</p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>Violate any applicable laws or regulations</li>
               <li>Infringe on intellectual property rights</li>
@@ -120,7 +120,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">5. Intellectual Property</h2>
             <p className="mb-4">
-              <strong>FlowKit Platform:</strong> The FlowKit website, branding, and original content are protected
+              <strong>Fluxora Platform:</strong> The Fluxora website, branding, and original content are protected
               by copyright and trademark laws. You may not copy, modify, or distribute them without permission.
             </p>
             <p className="mb-4">
@@ -153,7 +153,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">7. Service Availability</h2>
             <p className="mb-4">
-              We strive to keep FlowKit available 24/7, but:
+              We strive to keep Fluxora available 24/7, but:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>We may experience downtime for maintenance or updates</li>
@@ -167,7 +167,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">8. Termination</h2>
             <p className="mb-4">
-              We may terminate or suspend your access to FlowKit:
+              We may terminate or suspend your access to Fluxora:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>If you violate these Terms</li>
@@ -176,7 +176,7 @@ export default function TermsPage() {
               <li>At our discretion, with or without notice</li>
             </ul>
             <p className="mt-4">
-              You may stop using FlowKit at any time. Sections that should survive termination (like disclaimers
+              You may stop using Fluxora at any time. Sections that should survive termination (like disclaimers
               and limitations) will remain in effect.
             </p>
           </section>
@@ -185,7 +185,7 @@ export default function TermsPage() {
           <section>
             <h2 className="text-2xl font-bold text-white mb-4">9. Privacy</h2>
             <p>
-              Your use of FlowKit is also governed by our{" "}
+              Your use of Fluxora is also governed by our{" "}
               <Link href="/privacy" className="text-primary hover:underline">
                 Privacy Policy
               </Link>
@@ -222,9 +222,9 @@ export default function TermsPage() {
               Questions about these Terms? Contact us:
             </p>
             <div className="bg-white/5 border border-white/10 rounded-lg p-6 space-y-2">
-              <p><strong>Email:</strong> <a href="mailto:legal@flowkit.in" className="text-primary hover:underline">legal@flowkit.in</a></p>
-              <p><strong>GitHub:</strong> <a href="https://github.com/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">github.com/harshit-exe/flowkit</a></p>
-              <p><strong>Website:</strong> <a href="https://flowkit.in" className="text-primary hover:underline">flowkit.in</a></p>
+              <p><strong>Email:</strong> <a href="mailto:legal@fluxora.in" className="text-primary hover:underline">legal@fluxora.in</a></p>
+              <p><strong>GitHub:</strong> <a href="https://github.com/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">github.com/harshit-exe/fluxora</a></p>
+              <p><strong>Website:</strong> <a href="https://fluxora.in" className="text-primary hover:underline">fluxora.in</a></p>
             </div>
           </section>
 

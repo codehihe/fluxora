@@ -12,7 +12,7 @@ export default cloudinary;
 // Upload image to Cloudinary
 export async function uploadToCloudinary(
   file: File,
-  folder: string = 'flowkit-workflows'
+  folder: string = 'fluxora-workflows'
 ): Promise<{ url: string; publicId: string }> {
   const arrayBuffer = await file.arrayBuffer();
   const buffer = Buffer.from(arrayBuffer);

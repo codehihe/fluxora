@@ -80,7 +80,7 @@ export default function AdminSidebar({ user }: AdminSidebarProps) {
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <Workflow className="h-5 w-5" />
           </div>
-          {!isCollapsed && <span className="text-lg">FlowKit</span>}
+          {!isCollapsed && <span className="text-lg">Fluxora</span>}
         </Link>
       </div>
 

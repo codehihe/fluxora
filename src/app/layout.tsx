@@ -23,7 +23,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   ...generateSEOMetadata({}),
-  metadataBase: new URL('https://www.flowkit.in'),
+  metadataBase: new URL('https://fluxora-pro.vercel.app'),
   keywords: [
     "n8n library",
     "n8n workflow",

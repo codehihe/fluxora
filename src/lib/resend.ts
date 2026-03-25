@@ -46,15 +46,15 @@ YOUR FLOWKIT ACCESS CODE: ${accessCode}
 
 This code is valid for 10 minutes.
 
-Enter this code at https://flowkit.in to complete your sign-in.
+Enter this code at https://fluxora.in to complete your sign-in.
 
 If you did not request this code, please ignore this email.
 
 ---
-FlowKit
-https://flowkit.in
+Fluxora
+https://fluxora.in
 
-You received this email because someone requested access to FlowKit using this email address.
+You received this email because someone requested access to Fluxora using this email address.
   `.trim();
 
   // HTML version with minimal styling - looks transactional, not promotional
@@ -65,14 +65,14 @@ You received this email because someone requested access to FlowKit using this e
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your FlowKit Access Code</title>
+  <title>Your Fluxora Access Code</title>
 </head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background-color: #ffffff; color: #000000; padding: 0; margin: 0;">
   <div style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
     
     <!-- Simple Header -->
     <div style="margin-bottom: 30px;">
-      <h1 style="font-size: 24px; font-weight: 600; color: #000000; margin: 0 0 8px 0;">FlowKit</h1>
+      <h1 style="font-size: 24px; font-weight: 600; color: #000000; margin: 0 0 8px 0;">Fluxora</h1>
       <p style="font-size: 14px; color: #666666; margin: 0;">Access Code Verification</p>
     </div>
 
@@ -86,7 +86,7 @@ You received this email because someone requested access to FlowKit using this e
     <!-- Simple Instructions -->
     <div style="margin-bottom: 30px;">
       <p style="font-size: 15px; line-height: 1.6; color: #333333; margin: 0 0 16px 0;">
-        Enter this code at <a href="https://flowkit.in" style="color: #FF6633; text-decoration: none;">flowkit.in</a> to complete your sign-in.
+        Enter this code at <a href="https://fluxora.in" style="color: #FF6633; text-decoration: none;">fluxora.in</a> to complete your sign-in.
       </p>
       <p style="font-size: 14px; line-height: 1.6; color: #666666; margin: 0;">
         If you did not request this code, please ignore this email.
@@ -96,11 +96,11 @@ You received this email because someone requested access to FlowKit using this e
     <!-- Simple Footer -->
     <div style="padding-top: 30px; border-top: 1px solid #e0e0e0; margin-top: 40px;">
       <p style="font-size: 13px; color: #999999; margin: 0 0 8px 0;">
-        FlowKit<br>
-        <a href="https://flowkit.in" style="color: #999999; text-decoration: none;">flowkit.in</a>
+        Fluxora<br>
+        <a href="https://fluxora.in" style="color: #999999; text-decoration: none;">fluxora.in</a>
       </p>
       <p style="font-size: 12px; color: #999999; margin: 0;">
-        You received this email because someone requested access to FlowKit using this email address.
+        You received this email because someone requested access to Fluxora using this email address.
       </p>
     </div>
   </div>
@@ -109,9 +109,9 @@ You received this email because someone requested access to FlowKit using this e
   `.trim();
 
   const emailOptions = {
-    from: 'FlowKit <noreply@flowkit.in>',
+    from: 'Fluxora <noreply@fluxora.in>',
     to: [to],
-    subject: 'Your FlowKit Access Code',
+    subject: 'Your Fluxora Access Code',
     text: emailText,
     html: emailHtml,
   };

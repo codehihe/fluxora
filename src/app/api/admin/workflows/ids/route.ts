@@ -8,7 +8,7 @@ import { authOptions } from "@/lib/auth";
 
 export async function GET(req: Request) {
     const apiKey = req.headers.get("x-admin-secret");
-    const isAdminKeyValid = apiKey === process.env.ADMIN_SECRET || apiKey === "flowkit-admin-secret-123";
+    const isAdminKeyValid = apiKey === process.env.ADMIN_SECRET || apiKey === "fluxora-admin-secret-123";
 
     if (!isAdminKeyValid) {
         const session = await getServerSession(authOptions);

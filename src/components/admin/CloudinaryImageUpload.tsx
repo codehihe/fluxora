@@ -16,7 +16,7 @@ interface CloudinaryImageUploadProps {
 export function CloudinaryImageUpload({
   value,
   onChange,
-  folder = "flowkit-workflows",
+  folder = "fluxora-workflows",
   label = "Workflow Image",
   description = "Upload an image for this workflow (max 10MB, JPG/PNG/WebP/GIF)",
 }: CloudinaryImageUploadProps) {

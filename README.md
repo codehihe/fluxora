@@ -1,12 +1,12 @@
 <div align="center">
 
-# FlowKit 🚀
+# Fluxora 🚀
 
 ### The Ultimate n8n Workflow Library Platform
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/harshit-exe/FlowKit?style=social)](https://github.com//stargazers)
-[![GitHub issues](https://img.shields.io/github/issues/harshit-exe/FlowKit)](https://github.com//issues)
+[![GitHub stars](https://img.shields.io/github/stars/harshit-exe/Fluxora?style=social)](https://github.com//stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/harshit-exe/Fluxora)](https://github.com//issues)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
@@ -14,17 +14,17 @@
 **Discover, share, and deploy 150+ curated n8n automation workflows.** <br/>
 Built with ❤️ in India 🇮🇳
 
-[**Live Demo**](https://flowkit.in) · [**Documentation**](https://github.com//wiki) · [**Report Bug**](https://github.com//issues) · [**Request Feature**](https://github.com//issues)
+[**Live Demo**](https://fluxora.in) · [**Documentation**](https://github.com//wiki) · [**Report Bug**](https://github.com//issues) · [**Request Feature**](https://github.com//issues)
 
 </div>
 
 ## ⭐ Star History
 
-<a href="https://www.star-history.com/#harshit-exe/FlowKit&type=timeline&legend=bottom-right">
+<a href="https://www.star-history.com/#harshit-exe/Fluxora&type=timeline&legend=bottom-right">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=harshit-exe/FlowKit&type=timeline&theme=dark&legend=bottom-right" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=harshit-exe/FlowKit&type=timeline&legend=bottom-right" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=harshit-exe/FlowKit&type=timeline&legend=bottom-right" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=harshit-exe/Fluxora&type=timeline&theme=dark&legend=bottom-right" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=harshit-exe/Fluxora&type=timeline&legend=bottom-right" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=harshit-exe/Fluxora&type=timeline&legend=bottom-right" />
  </picture>
 </a>
 
@@ -60,7 +60,7 @@ Built with ❤️ in India 🇮🇳
 
 ## 🚀 Quick Start
 
-Get FlowKit running locally in under 5 minutes!
+Get Fluxora running locally in under 5 minutes!
 
 ### Prerequisites
 
@@ -73,7 +73,7 @@ Get FlowKit running locally in under 5 minutes!
 1. **Clone the repository**
    ```bash
    git clone https://github.com/.git
-   cd FlowKit
+   cd Fluxora
    ```
 
 2. **Install dependencies**
@@ -86,7 +86,7 @@ Get FlowKit running locally in under 5 minutes!
    cp .env.example .env
    ```
 4.  **chnage admin password**
-     ```npx tsx change-admin-password.ts admin@flowkit.in "1@qwerty091"
+     ```npx tsx change-admin-password.ts admin@fluxora.in "1@qwerty091"
      ```
      
    Edit `.env` and configure your database and API keys (see [Environment Variables](#environment-variables) below)
@@ -113,7 +113,7 @@ Get FlowKit running locally in under 5 minutes!
    - **Admin panel**: [http://localhost:3000/admin](http://localhost:3000/admin)
    
    **Default Admin Credentials:**
-   - Email: `admin@flowkit.in`
+   - Email: `admin@fluxora.in`
    - Password: `Admin@123!`
    
    ⚠️ **Change these credentials immediately after first login!**
@@ -124,7 +124,7 @@ Create a `.env` file in the root directory with the following variables:
 
 | Variable | Required | Description | Example |
 |----------|----------|-------------|---------|
-| `DATABASE_URL` | ✅ Yes | MySQL connection string | `mysql://user:pass@host:3306/flowkit` |
+| `DATABASE_URL` | ✅ Yes | MySQL connection string | `mysql://user:pass@host:3306/fluxora` |
 | `NEXTAUTH_URL` | ✅ Yes | Your app's base URL | `http://localhost:3000` |
 | `NEXTAUTH_SECRET` | ✅ Yes | Secret for JWT encryption | Generate with `openssl rand -base64 32` |
 | `GEMINI_API_KEY` | ✅ Yes | Google Gemini API key | Get from [Google AI Studio](https://aistudio.google.com/app/apikey) |
@@ -140,7 +140,7 @@ Create a `.env` file in the root directory with the following variables:
 
 ## 🗄️ Database Setup
 
-FlowKit supports any MySQL-compatible database. Here are some recommended providers:
+Fluxora supports any MySQL-compatible database. Here are some recommended providers:
 
 ### Option 1: Local MySQL
 ```bash
@@ -150,7 +150,7 @@ brew install mysql  # macOS
 
 # Create database
 mysql -u root -p
-CREATE DATABASE flowkit;
+CREATE DATABASE fluxora;
 ```
 
 ### Option 2: Cloud Providers (Recommended for Production)
@@ -188,7 +188,7 @@ npx prisma studio
 ## 📁 Project Structure
 
 ```
-flowkit/
+fluxora/
 ├── prisma/
 │   ├── schema.prisma          # Database schema
 │   └── seed.ts                # Database seeding script
@@ -225,7 +225,7 @@ flowkit/
 
 ## 🌐 API Endpoints
 
-FlowKit provides a RESTful API for managing workflows:
+Fluxora provides a RESTful API for managing workflows:
 
 ### Workflows
 - `GET /api/workflows` - List all workflows (with pagination & filters)
@@ -308,7 +308,7 @@ Before deploying to production:
 npm run build
 
 # Start with PM2
-pm2 start npm --name "flowkit" -- start
+pm2 start npm --name "fluxora" -- start
 ```
 </details>
 
@@ -327,13 +327,13 @@ pm2 start npm --name "flowkit" -- start
 
 ## 🤝 Contributing
 
-We love contributions! FlowKit is better because of developers like you. 🙌
+We love contributions! Fluxora is better because of developers like you. 🙌
 
 ### Ways to Contribute
 
 - 🐛 **Report bugs** - Found an issue? [Open a bug report](https://github.com//issues/new)
 - ✨ **Suggest features** - Have ideas? [Request a feature](https://github.com//issues/new)
-- 📝 **Improve documentation** - Help others understand FlowKit better
+- 📝 **Improve documentation** - Help others understand Fluxora better
 - 🔧 **Submit PRs** - Fix bugs or add features
 - 📦 **Share workflows** - Contribute your n8n workflows
 
@@ -412,7 +412,7 @@ We love contributions! FlowKit is better because of developers like you. 🙌
 
 ## 📸 Screenshots
 
-> Coming soon! Check out the [live demo](https://flowkit.in) in the meantime.
+> Coming soon! Check out the [live demo](https://fluxora.in) in the meantime.
 
 ## 📝 License
 
@@ -420,7 +420,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## 🙏 Acknowledgments
 
-FlowKit wouldn't be possible without these amazing projects:
+Fluxora wouldn't be possible without these amazing projects:
 
 - [**n8n**](https://n8n.io/) - The powerful workflow automation tool that inspired this project
 - [**shadcn/ui**](https://ui.shadcn.com/) - Beautiful and accessible UI components
@@ -430,7 +430,7 @@ FlowKit wouldn't be possible without these amazing projects:
 
 ## 📧 Contact & Community
 
-- 🌐 **Website**: [flowkit.in](https://flowkit.in)
+- 🌐 **Website**: [fluxora.in](https://fluxora.in)
 - 💬 **Discussions**: [GitHub Discussions](https://github.com//discussions)
 - 🐛 **Issues**: [GitHub Issues](https://github.com//issues)
 - 👤 **Author**: [@harshit-exe](https://github.com/harshit-exe)
@@ -440,6 +440,6 @@ FlowKit wouldn't be possible without these amazing projects:
 
 **Built with ❤️ in India 🇮🇳**
 
-If FlowKit helped you, consider giving it a ⭐ on GitHub!
+If Fluxora helped you, consider giving it a ⭐ on GitHub!
 
 </div>

@@ -1,6 +1,6 @@
 import { TutorialProgress } from "@/types"
 
-const STORAGE_PREFIX = "flowkit_tutorial_progress_"
+const STORAGE_PREFIX = "fluxora_tutorial_progress_"
 
 /**
  * Get tutorial progress from localStorage

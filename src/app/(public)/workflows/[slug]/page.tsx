@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   if (!workflow) {
     return {
-      title: "Workflow Not Found | FlowKit",
+      title: "Workflow Not Found | Fluxora",
       description: "The requested n8n workflow could not be found. Browse our library of 150+ free workflow templates.",
     }
   }
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     'production ready',
   ];
 
-  const pageUrl = `https://www.flowkit.in/workflows/${workflow.slug}`;
+  const pageUrl = `https://www.fluxora.in/workflows/${workflow.slug}`;
 
   // Generate dynamic OG image
   const ogImageParams = new URLSearchParams({
@@ -58,13 +58,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     description: cleanDescription.slice(0, 100),
     type: 'workflow',
   });
-  const ogImage = `https://www.flowkit.in/api/og?${ogImageParams.toString()}`;
+  const ogImage = `https://www.fluxora.in/api/og?${ogImageParams.toString()}`;
 
   return {
-    title: `${workflow.name} - Free n8n Workflow Template | FlowKit`,
+    title: `${workflow.name} - Free n8n Workflow Template | Fluxora`,
     description: metaDescription,
     keywords: keywords.join(', '),
-    authors: [{ name: 'FlowKit Team' }],
+    authors: [{ name: 'Fluxora Team' }],
     openGraph: {
       type: 'article',
       url: pageUrl,
@@ -78,14 +78,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
           alt: workflow.name,
         },
       ],
-      siteName: 'FlowKit',
+      siteName: 'Fluxora',
     },
     twitter: {
       card: 'summary_large_image',
       title: `${workflow.name} - n8n Workflow`,
       description: metaDescription,
       images: [ogImage],
-      creator: '@flowkit_in',
+      creator: '@fluxora_in',
     },
     alternates: {
       canonical: pageUrl,
@@ -294,7 +294,7 @@ export default async function WorkflowDetailPage({ params }: { params: { slug: s
     "@type": "SoftwareSourceCode",
     "name": workflow.name,
     "description": workflow.description?.replace(/<[^>]*>/g, ''),
-    "url": `https://www.flowkit.in/workflows/${workflow.slug}`,
+    "url": `https://www.fluxora.in/workflows/${workflow.slug}`,
     "programmingLanguage": "JSON",
     "codeRepository": "https://github.com/",
     "keywords": [
@@ -348,19 +348,19 @@ export default async function WorkflowDetailPage({ params }: { params: { slug: s
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://www.flowkit.in"
+        "item": "https://www.fluxora.in"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Workflows",
-        "item": "https://www.flowkit.in/workflows"
+        "item": "https://www.fluxora.in/workflows"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": workflow.name,
-        "item": `https://www.flowkit.in/workflows/${workflow.slug}`
+        "item": `https://www.fluxora.in/workflows/${workflow.slug}`
       }
     ]
   };
@@ -583,7 +583,7 @@ export default async function WorkflowDetailPage({ params }: { params: { slug: s
                           let externalUrl = rawUrl;
                           try {
                             const urlObj = new URL(rawUrl);
-                            urlObj.searchParams.set("utm_source", "flowkit");
+                            urlObj.searchParams.set("utm_source", "fluxora");
                             externalUrl = urlObj.toString();
                           } catch (e) {
                             // Invalid URL, keep as is

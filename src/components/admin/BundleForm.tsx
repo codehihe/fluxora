@@ -432,7 +432,7 @@ export function BundleForm({ bundle }: BundleFormProps) {
         <CloudinaryImageUpload
           value={formData.thumbnail}
           onChange={handleThumbnailUpload}
-          folder="flowkit-bundles"
+          folder="fluxora-bundles"
           label="Bundle Thumbnail"
           description="Upload a thumbnail image for this bundle (max 10MB, JPG/PNG/WebP/GIF)"
         />

@@ -18,7 +18,7 @@ export function GithubStarButton({ className }: GithubStarButtonProps) {
       try {
         // Using a default repo for now, can be parameterized
         const res = await fetch(
-          "https://img.shields.io/github/stars/harshit-exe/FlowKit.json"
+          "https://img.shields.io/github/stars/harshit-exe/Fluxora.json"
         );
         const data = await res.json();
         // shields.io gives: { "name": "GitHub Repo stars", "value": "1.5k", ... }

@@ -195,7 +195,7 @@ export default function EmailManagement({ stats }: { stats: Stats }) {
 
           <div className="mt-6 p-4 bg-muted/50 border-2 border-dashed">
             <p className="text-xs font-mono text-muted-foreground">
-              <strong>Note:</strong> The test email will be sent using the FlowKit access code template.
+              <strong>Note:</strong> The test email will be sent using the Fluxora access code template.
               Check your inbox (and spam folder) to verify delivery.
             </p>
           </div>
@@ -282,7 +282,7 @@ export default function EmailManagement({ stats }: { stats: Stats }) {
         <Card className="p-6 border-2">
           <h3 className="text-xl font-mono font-bold mb-4">EMAIL TEMPLATES</h3>
           <p className="text-sm text-muted-foreground font-mono mb-6">
-            View and manage email templates used by FlowKit.
+            View and manage email templates used by Fluxora.
           </p>
 
           <div className="space-y-4">
@@ -293,11 +293,11 @@ export default function EmailManagement({ stats }: { stats: Stats }) {
                 <span className="text-xs font-mono text-muted-foreground">DEFAULT</span>
               </div>
               <p className="text-sm text-muted-foreground font-mono mb-3">
-                Sent when users request access to FlowKit with their 6-digit code.
+                Sent when users request access to Fluxora with their 6-digit code.
               </p>
               <div className="bg-muted/50 p-3 rounded font-mono text-xs">
                 <div className="font-bold mb-1">Subject:</div>
-                <div className="mb-3">Your FlowKit Access Code 🔑</div>
+                <div className="mb-3">Your Fluxora Access Code 🔑</div>
                 <div className="font-bold mb-1">Template Location:</div>
                 <div className="text-primary">src/lib/email.ts</div>
               </div>
@@ -317,7 +317,7 @@ export default function EmailManagement({ stats }: { stats: Stats }) {
                 <ul className="list-disc list-inside space-y-1">
                   <li>Custom subject line</li>
                   <li>Plain text message</li>
-                  <li>FlowKit branding</li>
+                  <li>Fluxora branding</li>
                 </ul>
               </div>
             </div>
