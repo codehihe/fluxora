@@ -22,6 +22,7 @@ import {
   Bot,
   Sparkles,
 } from "lucide-react";
+import { Prisma } from "@prisma/client";
 
 // Category icon mapping
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -38,8 +39,22 @@ const categoryIcons: Record<string, any> = {
 
 export default async function HomePage() {
   // Fetch data for homepage with error handling
-  let featuredWorkflows: any[] = [];
-  let categories: any[] = [];
+  let featuredWorkflows: Prisma.WorkflowGetPayload<{
+    include: {
+      categories: {
+        include: { category: true },
+      },
+    },
+  }>[] = [];
+  
+  let categories: Prisma.CategoryGetPayload<{
+    include: {
+      _count: {
+        select: { workflows: true },
+      },
+    },
+  }>[] = [];
+  
   let totalWorkflows = 0;
   let totalUsers = 0;
   let totalSubmissions = 0;
@@ -205,7 +220,7 @@ export default async function HomePage() {
                         <Badge variant="secondary" className="font-mono text-xs">
                           {workflow.difficulty}
                         </Badge>
-                        {workflow.categories.slice(0, 1).map((cat: any) => (
+                        {workflow.categories.slice(0, 1).map((cat: { category: { id: string, name: string } }) => (
                           <Badge
                             key={cat.category.id}
                             variant="outline"
