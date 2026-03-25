@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+export const dynamic = "force-dynamic";
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";

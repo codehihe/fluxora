@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+export const dynamic = "force-dynamic";
 import SubmitWorkflowForm from "@/components/workflow/SubmitWorkflowForm";
 import { Sparkles, Trophy, Users, Globe } from "lucide-react";
 import * as motion from "framer-motion/client";
