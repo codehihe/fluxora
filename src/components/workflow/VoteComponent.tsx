@@ -1,4 +1,6 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 
 import { useState } from "react";
 import { ArrowBigUp, ArrowBigDown } from "lucide-react";

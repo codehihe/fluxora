@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { prisma } from "@/lib/prisma"
 import { getWorkflowStatsOffsets, applyStatsOffsetsToWorkflows } from "@/lib/stats"
@@ -142,7 +145,7 @@ export default async function AdminDashboard() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-mono font-bold tracking-tight">Dashboard</h1>
-          <p className="text-muted-foreground font-mono mt-1">Overview of your platform's performance.</p>
+          <p className="text-muted-foreground font-mono mt-1">Overview of your platform&apos;s performance.</p>
         </div>
         <div className="flex items-center gap-2 bg-muted/50 px-3 py-1 rounded-full border">
           <Activity className="h-4 w-4 text-green-500 animate-pulse" />

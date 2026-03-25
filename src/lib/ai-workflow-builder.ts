@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { generateAIContent } from "./ai-provider";
 import { prisma } from "@/lib/prisma";
 

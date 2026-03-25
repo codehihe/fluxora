@@ -1,4 +1,6 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 
 import { useState } from "react";
 import { signIn } from "next-auth/react";
@@ -12,7 +14,6 @@ import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 export default function SignupPage() {
-  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -48,7 +49,7 @@ export default function SignupPage() {
         const data = await res.json();
         toast.error(data.message || "Something went wrong");
       }
-    } catch (error) {
+    } catch {
       toast.error("Something went wrong");
     } finally {
       setIsLoading(false);

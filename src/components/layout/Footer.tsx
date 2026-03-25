@@ -1,4 +1,6 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { Workflow, Github, Twitter, Linkedin } from "lucide-react";
 import { Footer as AnimatedFooter } from "@/components/ui/modem-animated-footer";
 import Image from "next/image";

@@ -172,7 +172,7 @@ export default async function SearchPage({
           <h1 className="text-4xl font-bold">Search Results</h1>
           {query && (
             <p className="text-gray-400 mt-2">
-              Found {totalResults} {totalResults === 1 ? "result" : "results"} for "{query}"
+              Found {totalResults} {totalResults === 1 ? "result" : "results"} for &quot;{query}&quot;
             </p>
           )}
         </div>
@@ -184,6 +184,7 @@ export default async function SearchPage({
               <h2 className="text-2xl font-bold text-white">Bundles ({bundles.length})</h2>
               <p className="text-gray-400 mt-1">Curated workflow collections</p>
             </div>
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             <BundleGrid bundles={bundles as any} />
           </div>
         )}
@@ -196,6 +197,7 @@ export default async function SearchPage({
               <p className="text-gray-400 mt-1">Individual automation workflows</p>
             </div>
             <WorkflowGrid
+              /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
               workflows={transformedWorkflows as any}
               emptyMessage=""
             />
@@ -206,7 +208,7 @@ export default async function SearchPage({
         {totalResults === 0 && query && (
           <div className="text-center py-12">
             <p className="text-xl text-gray-400">
-              No workflows or bundles found for "{query}"
+              No workflows or bundles found for &quot;{query}&quot;
             </p>
             <p className="text-gray-500 mt-2">Try searching with different keywords</p>
           </div>

@@ -35,7 +35,7 @@ export async function POST(request: NextRequest) {
         typeof workflowJson === 'string'
           ? JSON.parse(workflowJson)
           : workflowJson;
-    } catch (e) {
+    } catch {
       return NextResponse.json(
         { error: 'Invalid workflow JSON' },
         { status: 400 }

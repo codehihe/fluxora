@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -21,6 +23,7 @@ import {
 } from "lucide-react";
 
 // Category icon mapping
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const categoryIcons: Record<string, any> = {
   automation: Workflow,
   communication: MessageSquare,

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
@@ -51,7 +53,7 @@ export async function POST(
             });
             return NextResponse.json({ saved: true });
         }
-    } catch (error) {
+    } catch {
         return NextResponse.json(
             { message: "Internal server error" },
             { status: 500 }

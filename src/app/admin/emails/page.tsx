@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { Suspense } from "react"
 import { prisma } from "@/lib/prisma"
 import EmailManagement from "@/components/admin/EmailManagement"

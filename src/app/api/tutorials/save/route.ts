@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { NextResponse } from "next/server"
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/lib/auth"
@@ -45,6 +47,7 @@ export async function POST(request: Request) {
                 // Delete existing steps and recreate (simpler than complex update logic)
                 steps: {
                     deleteMany: {},
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     create: tutorial.steps.map((step: any) => ({
                         order: step.order,
                         title: step.title,
@@ -54,6 +57,7 @@ export async function POST(request: Request) {
                         imageUrl: step.imageUrl,
                         videoUrl: step.videoUrl,
                         hints: step.hints || [],
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         credentialLinks: step.credentialLinks ? {
                             create: step.credentialLinks.map((cred: any) => ({
                                 name: cred.name,
@@ -64,6 +68,7 @@ export async function POST(request: Request) {
                                 setupInstructions: cred.setupInstructions
                             }))
                         } : undefined,
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         externalResources: step.externalResources ? {
                             create: step.externalResources.map((resource: any) => ({
                                 title: resource.title,
@@ -83,6 +88,7 @@ export async function POST(request: Request) {
                 isAIGenerated: tutorial.isAIGenerated || false,
                 isPublished: true,
                 steps: {
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     create: tutorial.steps.map((step: any) => ({
                         order: step.order,
                         title: step.title,
@@ -92,6 +98,7 @@ export async function POST(request: Request) {
                         imageUrl: step.imageUrl,
                         videoUrl: step.videoUrl,
                         hints: step.hints || [],
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         credentialLinks: step.credentialLinks ? {
                             create: step.credentialLinks.map((cred: any) => ({
                                 name: cred.name,
@@ -102,6 +109,7 @@ export async function POST(request: Request) {
                                 setupInstructions: cred.setupInstructions
                             }))
                         } : undefined,
+                        // eslint-disable-next-line @typescript-eslint/no-explicit-any
                         externalResources: step.externalResources ? {
                             create: step.externalResources.map((resource: any) => ({
                                 title: resource.title,

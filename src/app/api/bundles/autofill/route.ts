@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { NextResponse } from "next/server"
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/lib/auth"
@@ -32,6 +34,7 @@ export async function POST(request: Request) {
 Workflow ${i + 1}:
 - Name: ${w.name}
 - Description: ${w.description}
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 - Categories: ${w.categories?.map((c: any) => c.category.name).join(", ") || "None"}
 `).join("\n")
 
@@ -63,7 +66,7 @@ Return ONLY valid JSON.
                 cleanJson = cleanJson.replace(/^```\n/, "").replace(/\n```$/, "")
             }
             generatedData = JSON.parse(cleanJson)
-        } catch (e) {
+        } catch {
             console.error("Failed to parse AI response:", aiResponse)
             return NextResponse.json(
                 { error: "Failed to generate valid bundle data" },

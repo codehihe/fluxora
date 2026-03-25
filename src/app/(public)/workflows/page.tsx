@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { prisma } from "@/lib/prisma"
 import { applyStatsOffsetsToWorkflows } from "@/lib/stats"
 import WorkflowGrid from "@/components/workflow/WorkflowGrid"
@@ -156,7 +158,7 @@ export default async function WorkflowsPage({
           </p>
         </div>
 
-        {/* Workflows Grid */}
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
         <WorkflowGrid
           workflows={transformedWorkflows as any}
           emptyMessage="No workflows available yet. Check back soon!"

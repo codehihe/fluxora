@@ -92,6 +92,7 @@ export default async function AdminWorkflowsPage({
             </div>
           ) : (
             <>
+              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
               <WorkflowsList workflows={workflowsWithOffsets as any} />
               
               {/* Pagination */}

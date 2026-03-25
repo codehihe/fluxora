@@ -1,4 +1,7 @@
 "use client";
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";

@@ -6,14 +6,16 @@ import { authOptions } from "@/lib/auth";
 export async function GET(request: Request) {
   try {
     const session = await getServerSession(authOptions);
+    const userRole = (session?.user as { role?: string })?.role;
 
-    if (!session || ((session.user as any).role !== "ADMIN" && (session.user as any).role !== "SUPER_ADMIN")) {
+    if (!session || (userRole !== "ADMIN" && userRole !== "SUPER_ADMIN")) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
     const { searchParams } = new URL(request.url);
     const category = searchParams.get("category");
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const where: any = {
       isDeprecated: false,
     };

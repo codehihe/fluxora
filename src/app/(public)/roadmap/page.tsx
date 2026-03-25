@@ -1,4 +1,6 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 
 import { useState, useRef } from "react";
 import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion";

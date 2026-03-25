@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Github, Mail, Loader2 } from "lucide-react";
+import { Github, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 
 export default function LoginPage() {
@@ -21,7 +21,7 @@ export default function LoginPage() {
     setIsLoading(true);
     try {
       await signIn(provider, { callbackUrl: "/dashboard" });
-    } catch (error) {
+    } catch {
       toast.error("Something went wrong with social login");
     } finally {
       setIsLoading(false);
@@ -45,7 +45,7 @@ export default function LoginPage() {
         router.push("/dashboard");
         router.refresh();
       }
-    } catch (error) {
+    } catch {
       toast.error("Something went wrong");
     } finally {
       setIsLoading(false);

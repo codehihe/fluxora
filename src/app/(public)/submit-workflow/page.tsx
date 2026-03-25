@@ -61,7 +61,7 @@ export default async function SubmitWorkflowPage() {
                 Share Your <br /> Automation <br /> Genius
               </h1>
               <p className="text-lg text-gray-400 font-mono leading-relaxed max-w-lg">
-                Don't let your brilliant workflows gather dust. Share them with the community and become a recognized contributor.
+                Don&apos;t let your brilliant workflows gather dust. Share them with the community and become a recognized contributor.
               </p>
             </motion.div>
 

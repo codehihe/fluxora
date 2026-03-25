@@ -11,6 +11,7 @@ export async function GET(request: Request) {
     const limit = parseInt(searchParams.get("limit") || "20")
     const published = searchParams.get("published")
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const where: any = {}
     if (published !== null) {
       where.published = published === "true"
@@ -127,7 +128,7 @@ export async function POST(request: Request) {
     if (typeof workflowJson === 'string') {
       try {
         parsedJson = JSON.parse(workflowJson)
-      } catch (e) {
+      } catch {
         // Ignore parse error here, validation happened before
       }
     }

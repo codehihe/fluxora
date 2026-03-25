@@ -1,4 +1,6 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 
 import { useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -27,6 +29,7 @@ import { format } from "date-fns";
 
 type Submission = {
   id: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   workflowJson: any;
   category: string;
   submitterName: string | null;
@@ -77,6 +80,7 @@ export default function SubmissionsPage() {
     }
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const copyJson = (json: any) => {
     navigator.clipboard.writeText(JSON.stringify(json, null, 2));
     toast.success("JSON copied to clipboard");

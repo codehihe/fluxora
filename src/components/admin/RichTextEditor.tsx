@@ -1,4 +1,7 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-require-imports */
+
 
 import { useEffect, useRef, useState } from "react";
 import { Label } from "@/components/ui/label";

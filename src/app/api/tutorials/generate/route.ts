@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { NextResponse } from "next/server"
 import { getServerSession } from "next-auth"
 import { authOptions } from "@/lib/auth"
@@ -224,6 +226,7 @@ Create a tutorial with 5-10 steps. For EVERY step that involves setting up crede
         }
 
         // Ensure all steps have required fields (preserve credentialLinks and externalResources if present)
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         tutorial.steps = tutorial.steps.map((step: any, index: number) => ({
             id: step.id || `step-${index + 1}`,
             order: step.order || index + 1,

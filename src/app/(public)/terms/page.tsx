@@ -38,7 +38,7 @@ export default function TermsPage() {
             <p className="mb-4">
               Welcome to FlowKit! By accessing or using our platform at{" "}
               <a href="https://flowkit.in" className="text-primary hover:underline">flowkit.in</a>,
-              you agree to be bound by these Terms of Service ("Terms"). If you disagree with any part of these terms,
+              you agree to be bound by these Terms of Service (&quot;Terms&quot;). If you disagree with any part of these terms,
               please do not use our service.
             </p>
             <p>
@@ -98,7 +98,7 @@ export default function TermsPage() {
               We strive to provide high-quality, production-ready workflows. However:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>Workflows are provided "as is" without warranties</li>
+              <li>Workflows are provided &quot;as is&quot; without warranties</li>
               <li>We do not guarantee workflows will meet your specific needs</li>
               <li>You are responsible for testing workflows before production use</li>
               <li>We are not liable for any damages from workflow usage</li>
@@ -138,7 +138,7 @@ export default function TermsPage() {
 
             <h3 className="text-xl font-semibold text-white mb-3 mt-6">6.1 No Warranty</h3>
             <p className="mb-4">
-              FLOWKIT IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+              FLOWKIT IS PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED,
               INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT.
             </p>
 
@@ -200,7 +200,7 @@ export default function TermsPage() {
               We may update these Terms from time to time. When we do:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>We will update the "Last Updated" date</li>
+              <li>We will update the &quot;Last Updated&quot; date</li>
               <li>We will notify you of material changes via email or website notice</li>
               <li>Continued use after changes constitutes acceptance</li>
             </ul>

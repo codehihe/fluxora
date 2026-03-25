@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import Groq from "groq-sdk";
 
 function getGroqClient() {

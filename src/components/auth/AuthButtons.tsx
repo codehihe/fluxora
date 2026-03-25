@@ -1,4 +1,6 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";

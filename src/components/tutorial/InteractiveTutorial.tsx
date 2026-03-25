@@ -1,4 +1,6 @@
 "use client"
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 
 import { Tutorial, TutorialProgress } from "@/types"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"

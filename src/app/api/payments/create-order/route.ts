@@ -48,7 +48,7 @@ export async function POST(req: Request) {
     }
 
     let finalPrice = workflow.price;
-    let originalPrice = workflow.price;
+    const originalPrice = workflow.price;
     let discountAmount = 0;
     let appliedDiscountPercentage = 0;
 

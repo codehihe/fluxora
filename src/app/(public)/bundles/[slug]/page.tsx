@@ -231,6 +231,7 @@ export default async function BundlePage({ params }: BundlePageProps) {
                     <div className="absolute -left-4 top-8 w-8 h-8 rounded-full bg-gradient-to-br from-[#FF6B35] to-[#F7931E] flex items-center justify-center text-white font-bold text-sm z-10">
                       {index + 1}
                     </div>
+                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                     <WorkflowCard workflow={bw.workflow as any} />
                   </div>
                 ))}

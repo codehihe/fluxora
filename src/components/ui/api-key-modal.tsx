@@ -79,8 +79,8 @@ export default function ApiKeyModal({ isOpen, onClose, onSave }: ApiKeyModalProp
                 </p>
                 <p className="text-xs text-gray-300 font-mono leading-relaxed">
                   Your API key is stored <strong className="text-primary">locally in your browser only</strong>. 
-                  We never send it to our servers or store it anywhere else. It's used directly to communicate 
-                  with Google's Gemini AI on your behalf.
+                  It&apos;s used directly to communicate 
+                  with Google&apos;s Gemini AI on your behalf.
                 </p>
               </div>
             </div>
@@ -113,11 +113,11 @@ export default function ApiKeyModal({ isOpen, onClose, onSave }: ApiKeyModalProp
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary font-bold">3.</span>
-                <span>Click "Create API Key" and copy it</span>
+                <span>Click &quot;Create API Key&quot; and copy it</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-primary font-bold">4.</span>
-                <span>Paste it below and you're ready to go! 🚀</span>
+                <span>Paste it below and you&apos;re ready to go! 🚀</span>
               </li>
             </ol>
           </div>
@@ -144,7 +144,7 @@ export default function ApiKeyModal({ isOpen, onClose, onSave }: ApiKeyModalProp
               </button>
             </div>
             <p className="text-xs text-gray-400 font-mono">
-              Your key starts with "AIza" and is about 39 characters long
+              Your key starts with &quot;AIza&quot; and is about 39 characters long
             </p>
           </div>
 
@@ -181,7 +181,7 @@ export default function ApiKeyModal({ isOpen, onClose, onSave }: ApiKeyModalProp
 
           {/* Footer Note */}
           <p className="text-xs text-center text-gray-500 font-mono">
-            By using this feature, you agree to Google's{" "}
+            By using this feature, you agree to Google&apos;s{" "}
             <a
               href="https://ai.google.dev/terms"
               target="_blank"

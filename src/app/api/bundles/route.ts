@@ -12,6 +12,7 @@ export async function GET(request: Request) {
     const published = searchParams.get("published")
     const featured = searchParams.get("featured")
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const where: any = {}
     if (published !== null) {
       where.published = published === "true"

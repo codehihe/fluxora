@@ -1,4 +1,6 @@
 "use client"
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 
 import { useState } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -62,7 +64,7 @@ export default function CouponsClient({ initialCoupons }: { initialCoupons: Coup
       setCoupons(c => c.filter(x => x.id !== id))
       toast.success("Coupon deleted")
       router.refresh()
-    } catch (error) {
+    } catch {
       toast.error("Failed to delete coupon")
     }
   }

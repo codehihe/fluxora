@@ -1,4 +1,6 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 
 import React, { useEffect, useRef, useMemo, ReactNode, RefObject } from 'react';
 import { gsap } from 'gsap';

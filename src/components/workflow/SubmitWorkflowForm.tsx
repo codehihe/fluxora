@@ -60,7 +60,7 @@ export default function SubmitWorkflowForm({ categories }: SubmitWorkflowFormPro
             <div>
               <h2 className="text-3xl font-bold text-white font-mono mb-2">Legendary!</h2>
               <p className="text-gray-400 font-mono text-sm leading-relaxed">
-                Your workflow has been beamed to our review team. You're not just sharing code; you're saving someone hours of their life.
+                Your workflow has been beamed to our review team. You&apos;re not just sharing code; you&apos;re saving someone hours of their life.
               </p>
             </div>
             <Button 

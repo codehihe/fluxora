@@ -21,7 +21,7 @@ export async function POST(request: Request) {
         if (typeof workflowJson === 'string') {
             try {
                 parsedJson = JSON.parse(workflowJson)
-            } catch (e) {
+            } catch {
                 return NextResponse.json({ error: "Invalid JSON format" }, { status: 400 })
             }
         }

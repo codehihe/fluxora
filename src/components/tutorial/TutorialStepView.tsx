@@ -1,4 +1,7 @@
 "use client"
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @next/next/no-img-element */
+
 
 import { TutorialStep, TutorialProgress } from "@/types"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"

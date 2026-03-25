@@ -45,6 +45,7 @@ export async function POST(request: Request) {
           controller.enqueue(encoder.encode(finalData));
 
           controller.close();
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (error: any) {
           const errorData = `data: ${JSON.stringify({
             step: "error",

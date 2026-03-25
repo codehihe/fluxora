@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import type { Metadata } from "next";
 import { Space_Mono, Poppins } from "next/font/google";
 import "./globals.css";

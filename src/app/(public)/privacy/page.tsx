@@ -160,7 +160,7 @@ export default function PrivacyPage() {
 
           {/* Children's Privacy */}
           <section>
-            <h2 className="text-2xl font-bold text-white mb-4">9. Children's Privacy</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">9. Children&apos;s Privacy</h2>
             <p>
               FlowKit is not intended for users under 13 years of age. We do not knowingly collect data from
               children. If you believe we have collected data from a child, please contact us immediately.
@@ -184,7 +184,7 @@ export default function PrivacyPage() {
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>Posting the new policy on this page</li>
-              <li>Updating the "Last Updated" date</li>
+              <li>Updating the &quot;Last Updated&quot; date</li>
               <li>Sending an email notification (for material changes)</li>
             </ul>
           </section>

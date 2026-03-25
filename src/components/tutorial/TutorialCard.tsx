@@ -89,7 +89,7 @@ export default function TutorialCard({ tutorial, progress, onStart }: TutorialCa
         {!isInProgress && (
           <div className="pt-4 border-t">
             <p className="text-sm font-mono font-bold mb-2 text-muted-foreground uppercase">
-              What you'll learn:
+              What you&apos;ll learn:
             </p>
             <ul className="space-y-1 text-sm font-mono">
               {tutorial.steps.slice(0, 3).map((step, idx) => (

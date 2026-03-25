@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { Workflow, Category, Tag, Difficulty, Bundle } from "@prisma/client"
 
 // Re-export Difficulty for use in other files

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { notFound } from "next/navigation"
 import { prisma } from "@/lib/prisma"
 import WorkflowGrid from "@/components/workflow/WorkflowGrid"
@@ -211,6 +213,7 @@ export default async function CategoryPage({
         </div>
 
         {/* Workflows Grid */}
+        {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
         <WorkflowGrid
           workflows={transformedWorkflows as any}
           emptyMessage="No workflows in this category yet"

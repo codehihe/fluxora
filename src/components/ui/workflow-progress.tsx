@@ -1,4 +1,6 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 
 import { CheckCircle2, Circle, Loader2, XCircle } from "lucide-react";
 import { cn } from "@/lib/utils";

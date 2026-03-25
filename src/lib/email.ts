@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { prisma } from "@/lib/prisma";
 import { sendAccessCodeEmail as sendResend } from "./resend";
 import { sendAccessCodeEmail as sendNodemailer, sendEmail as sendNodemailerGeneric } from "./nodemailer";

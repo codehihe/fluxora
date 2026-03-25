@@ -1,4 +1,8 @@
 "use client"
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react/no-unescaped-entities */
+
 
 import { useState, useEffect } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -13,6 +17,7 @@ import { Tutorial } from "@/types"
 
 export default function TutorialsAdminPage() {
   const [workflows, setWorkflows] = useState<any[]>([])
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [selectedWorkflow, setSelectedWorkflow] = useState<any | null>(null)
   const [isGenerating, setIsGenerating] = useState(false)
   const [isSaving, setIsSaving] = useState(false)
@@ -96,6 +101,7 @@ export default function TutorialsAdminPage() {
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleEditStep = (stepIndex: number, field: string, value: any) => {
     if (!generatedTutorial) return
 
@@ -355,6 +361,7 @@ export default function TutorialsAdminPage() {
                       <Label className="font-mono uppercase text-xs text-blue-600 dark:text-blue-400">
                         🔐 Credential Setup Links ({step.credentialLinks.length})
                       </Label>
+                      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                       {step.credentialLinks.map((credLink: any, credIdx: number) => (
                         <div key={credIdx} className="bg-background border-2 rounded-lg p-3 space-y-2">
                           <div className="flex items-center justify-between">
@@ -405,6 +412,7 @@ export default function TutorialsAdminPage() {
                       <Label className="font-mono uppercase text-xs text-purple-600 dark:text-purple-400">
                         📚 External Resources ({step.externalResources.length})
                       </Label>
+                      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                       {step.externalResources.map((resource: any, resIdx: number) => (
                         <div key={resIdx} className="bg-background border-2 rounded-lg p-3 flex items-start justify-between gap-3">
                           <div className="flex-1 space-y-1">

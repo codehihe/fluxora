@@ -1,4 +1,6 @@
 "use client";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 
 import * as React from "react";
 import { SessionProvider } from "next-auth/react";

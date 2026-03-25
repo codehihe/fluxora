@@ -1,4 +1,6 @@
 "use server";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";

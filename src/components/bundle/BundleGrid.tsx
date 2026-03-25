@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import BundleCard from "./BundleCard"
 
 interface BundleGridProps {

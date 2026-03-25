@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { NextRequest, NextResponse } from "next/server"
 import { setEmailProvider, getEmailProvider, EmailProvider } from "@/lib/email"
 import { getServerSession } from "next-auth"
@@ -13,7 +15,7 @@ export async function GET() {
 
         const provider = await getEmailProvider()
         return NextResponse.json({ provider })
-    } catch (error) {
+    } catch {
         return NextResponse.json(
             { error: "Failed to fetch email provider setting" },
             { status: 500 }
@@ -44,7 +46,7 @@ export async function POST(request: NextRequest) {
             success: true,
             message: `Email provider switched to ${provider}`,
         })
-    } catch (error) {
+    } catch {
         return NextResponse.json(
             { error: "Failed to update email provider setting" },
             { status: 500 }

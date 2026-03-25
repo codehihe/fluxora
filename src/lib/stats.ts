@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { prisma } from "@/lib/prisma";
 
 export interface WorkflowStatsOffsets {

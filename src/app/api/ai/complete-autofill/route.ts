@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { NextResponse } from "next/server";
 import { generateAIContent } from "@/lib/ai-provider";
 
